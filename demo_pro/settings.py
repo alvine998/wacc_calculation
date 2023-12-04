@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-v=ha$r3gfs!$q*(=*0pj*)p*1(j$0g@am2w0xpm3e8-fa(v29@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pirantipenilai.com']
 
 
 # Application definition
@@ -119,7 +119,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/piranti1/calculation/demo_pro/media/'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = '/home/piranti1/calculation/demo_pro/public/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

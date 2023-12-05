@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-v=ha$r3gfs!$q*(=*0pj*)p*1(j$0g@am2w0xpm3e8-fa(v29@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pirantipenilai.com', 'https://pirantipenilai.com', 'www.pirantipenilai.com']
+ALLOWED_HOSTS = ['pirantipenilai.com', 'https://pirantipenilai.com', 'www.pirantipenilai.com', 'localhost']
 
 # Application definition
 

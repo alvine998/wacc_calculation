@@ -401,6 +401,8 @@ def wacc_view(request):
             table = Table(data)
             table2 = Table(data2)
 
+            # tWidth = p.getPageWidth
+
             # Add style to the table1
             style = TableStyle([
                 ('BACKGROUND', (0, 0), (-1, 0), '#77D7E4'),

@@ -13,7 +13,7 @@
       {% comment %} <input placeholder="Search" type="search" class="focus:outline-none p-2" /> {% endcomment %}
     </div>
     <div class="md:px-20 mt-5 flex gap-2 items-center">
-      <a href="" class="hover:bg-blue-300 duration-150 transition p-2">Home</a>
+      <a href="/" class="hover:bg-blue-300 duration-150 transition p-2">Home</a>
       <p>></p>
       <a href="" class="hover:bg-blue-300 duration-150 transition p-2">DCF CALCULATION</a>
     </div>
@@ -27,7 +27,7 @@
         <input type="text" name="num6" value="{{ num6 }}" class="hidden" />
         <input type="text" name="num7" value="{{ num7 }}" class="hidden" />
         <input type="text" name="num8" value="{{ num8 }}" class="hidden" />
-        
+
         <input type="text" name="COE" value="{{ COE }}" class="hidden" />
         <input type="text" name="EED" value="{{ EED }}" class="hidden" />
         <input type="text" name="DED" value="{{ DED }}" class="hidden" />
@@ -53,109 +53,111 @@
         <form method="post">
           {% csrf_token %}
           <h1 class="text-2xl font-semibold my-2 text-center">WACC CALCULATION</h1>
-          <table class="table border-separate border-spacing-5 w-full">
-            <tbody>
-              <tr>
-                <td>Equity Value</td>
-                <td>
-                  <input placeholder="0" value="{{ num1 }}" name="num1" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
+          <div class="overflow-x-auto">
+            <table class="table border-separate border-spacing-5 min-w-full divide-y">
+              <tbody>
+                <tr>
+                  <td>Equity Value</td>
+                  <td>
+                    <input placeholder="0" value="{{ num1 }}" name="num1" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
 
-                <td>EBIT</td>
-                <td>
-                  <input placeholder="0" value="{{ EBIT }}" name="EBIT" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
-              </tr>
-              <tr>
-                <td>Debt Value</td>
-                <td>
-                  <input placeholder="0" value="{{ num2 }}" name="num2" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
+                  <td>EBIT</td>
+                  <td>
+                    <input placeholder="0" value="{{ EBIT }}" name="EBIT" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Debt Value</td>
+                  <td>
+                    <input placeholder="0" value="{{ num2 }}" name="num2" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
 
-                <td>D&A</td>
-                <td>
-                  <input placeholder="0" value="{{ DA }}" name="DA" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
-              </tr>
-              <tr>
-                <td>Cost of Debt</td>
-                <td>
-                  <input placeholder="0" value="{{ num3 }}" name="num3" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
+                  <td>D&A</td>
+                  <td>
+                    <input placeholder="0" value="{{ DA }}" name="DA" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Cost of Debt</td>
+                  <td>
+                    <input placeholder="0" value="{{ num3 }}" name="num3" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
 
-                <td>CapEx</td>
-                <td>
-                  <input placeholder="0" value="{{ CapEx }}" name="CapEx" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
-              </tr>
-              <tr>
-                <td>Tax Rate</td>
-                <td>
-                  <input placeholder="0" value="{{ num4 }}" name="num4" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
+                  <td>CapEx</td>
+                  <td>
+                    <input placeholder="0" value="{{ CapEx }}" name="CapEx" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tax Rate</td>
+                  <td>
+                    <input placeholder="0" value="{{ num4 }}" name="num4" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
 
-                <td>Non Cash WC</td>
-                <td>
-                  <input placeholder="0" value="{{ NonCashWC }}" name="NonCashWC" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
-              </tr>
-              <tr>
-                <td>10y Treasury</td>
-                <td>
-                  <input placeholder="0" value="{{ num5 }}" name="num5" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
+                  <td>Non Cash WC</td>
+                  <td>
+                    <input placeholder="0" value="{{ NonCashWC }}" name="NonCashWC" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>10y Treasury</td>
+                  <td>
+                    <input placeholder="0" value="{{ num5 }}" name="num5" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
 
-                <td>Cash</td>
-                <td>
-                  <input placeholder="0" value="{{ Cash }}" name="Cash" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
-              </tr>
-              <tr>
-                <td>Beta</td>
-                <td>
-                  <input placeholder="0" value="{{ num6 }}" name="num6" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
+                  <td>Cash</td>
+                  <td>
+                    <input placeholder="0" value="{{ Cash }}" name="Cash" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Beta</td>
+                  <td>
+                    <input placeholder="0" value="{{ num6 }}" name="num6" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
 
-                <td>Marketable Securities</td>
-                <td>
-                  <input placeholder="0" value="{{ MS }}" name="MS" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
-              </tr>
-              <tr>
-                <td>Market Return</td>
-                <td>
-                  <input placeholder="0" value="{{ num7 }}" name="num7" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
+                  <td>Marketable Securities</td>
+                  <td>
+                    <input placeholder="0" value="{{ MS }}" name="MS" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Market Return</td>
+                  <td>
+                    <input placeholder="0" value="{{ num7 }}" name="num7" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
 
-                <td>Short Term Debt</td>
-                <td>
-                  <input placeholder="0" value="{{ STD }}" name="STD" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
-              </tr>
-              <tr>
-                <td>Growth Rate</td>
-                <td>
-                  <input placeholder="0" value="{{ num8 }}" name="num8" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
+                  <td>Short Term Debt</td>
+                  <td>
+                    <input placeholder="0" value="{{ STD }}" name="STD" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Growth Rate</td>
+                  <td>
+                    <input placeholder="0" value="{{ num8 }}" name="num8" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
 
-                <td>Long Term Debt</td>
-                <td>
-                  <input placeholder="0" value="{{ LTD }}" name="LTD" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
-              </tr>
-              <tr>
-                <td>Period (Year)</td>
-                <td>
-                  <input placeholder="0" value="{{ year }}" name="year" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
+                  <td>Long Term Debt</td>
+                  <td>
+                    <input placeholder="0" value="{{ LTD }}" name="LTD" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Period (Year)</td>
+                  <td>
+                    <input placeholder="0" value="{{ year }}" name="year" type="number" step="0.001" min="0" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
 
-                <td>Outstanding Shares</td>
-                <td>
-                  <input placeholder="0" value="{{ OSH }}" name="OSH" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  <td>Outstanding Shares</td>
+                  <td>
+                    <input placeholder="0" value="{{ OSH }}" name="OSH" type="number" step="0.001" class="focus:outline-none p-2 rounded-lg ml-5" required />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <input type="text" class="hidden" value="wacc" name="formType" />
           <div class="md:px-20">
             <button type="submit" class="bg-blue-500 w-full p-2 rounded-lg text-white">Submit</button>
@@ -167,34 +169,36 @@
         <div class="md:w-full md:pb-5 md:px-5">
           <div class="md:mx-0 md:p-5 md:w-full my-5 bg-blue-300 h-1/2 rounded-lg">
             <h1 class="text-2xl font-semibold my-2 text-center">Result</h1>
-            <table class="table border-separate border-spacing-5 w-full">
-              <tbody>
-                <tr>
-                  <td>Cost of Equity</td>
-                  <td>
-                    <input placeholder="0" value="{{ COE }}" readonly type="number" class="focus:outline-none p-2 rounded-lg ml-5" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>E / E + D</td>
-                  <td>
-                    <input placeholder="0" value="{{ EED }}" readonly type="number" class="focus:outline-none p-2 rounded-lg ml-5" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>D / E + D</td>
-                  <td>
-                    <input placeholder="0" value="{{ DED }}" readonly type="number" class="focus:outline-none p-2 rounded-lg ml-5" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>WACC</td>
-                  <td>
-                    <input placeholder="0" value="{{ WACC }}" readonly type="number" class="focus:outline-none p-2 rounded-lg ml-5" />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <divc class="overflow-x-auto">
+              <table class="table border-separate border-spacing-5 min-w-full divide-y">
+                <tbody>
+                  <tr>
+                    <td>Cost of Equity</td>
+                    <td>
+                      <input placeholder="0" value="{{ COE }}" readonly type="number" class="focus:outline-none p-2 rounded-lg ml-5" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>E / E + D</td>
+                    <td>
+                      <input placeholder="0" value="{{ EED }}" readonly type="number" class="focus:outline-none p-2 rounded-lg ml-5" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>D / E + D</td>
+                    <td>
+                      <input placeholder="0" value="{{ DED }}" readonly type="number" class="focus:outline-none p-2 rounded-lg ml-5" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>WACC</td>
+                    <td>
+                      <input placeholder="0" value="{{ WACC }}" readonly type="number" class="focus:outline-none p-2 rounded-lg ml-5" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       {% endif %}
@@ -202,8 +206,8 @@
 
     <div class="md:px-10">
       {% if COE %}
-        <div class="md:mx-0 md:p-5 my-5 bg-blue-300 h-100 rounded-lg">
-          <table class="table-auto border-separate border-spacing-5 w-full">
+        <div class="md:mx-0 md:p-5 my-5 bg-blue-300 h-100 rounded-lg overflow-x-auto">
+          <table class="table-auto border-separate border-spacing-5 min-w-full">
             <thead class="">
               <tr>
                 <th>Period</th>
